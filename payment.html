@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/payment.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pay with CryptoCurrency</h1>
+
+        <div class="paymentSource">
+            <div class="btcPayment">
+                <button type="button" id="btc">
+                    <img src="/images/icons8-bitcoin-48x.png" alt="BTC">
+                </button>
+            </div>
+            <div class="ethPayment">
+                <button type="button" id="eth">
+                    <img src="/images/icons8-ethereum-48.png" alt="ETH">
+                </button>
+            </div>
+            <div class="btcCashPayment">
+                <button type="button" id="btcCash">
+                    <img src="/images/icons8-bitcoin-48.png" alt="BTCCASH">
+                </button>
+            </div>
+        </div>
+
+        <div class="paymentDetails">
+            <div class="headerTxt">
+                <div class="btcQrCode">
+                    <img src="/images/ihr_qr_code_ohne_logo.jpg" alt="" height="200" width="200" class="btcImage" hidden>
+                </div>
+                <div class="ethQrCode"><img src="/images/ihr_qr_code_ohne_logo.jpg" alt="" height="200" width="200"
+                        class="ethImage">
+                </div>
+                <div class="btcCqrCode"><img src="/images/ihr_qr_code_ohne_logo.jpg" alt="" height="200" width="200"
+                        class="btcCimage" hidden>
+                </div>
+            </div>
+        <p class="paymentInstructions">
+            Do not include transaction fee to this amount.
+            Send 0.00000 BTC (in a SINGLE payment) to:
+        </p>
+        <div class="addressKey">
+            <input type="text" id="btcAddress" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" readonly>
+            <button type="button" class="copyButton" onclick="copyFunction()">
+                <img src="/images/icons8-copy-30.png" alt="copy">
+            </button>
+        </div>
+        <div class="paymentWaiting">
+            <p>Awaiting Confirmation</p>
+            <p>15:00</p>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+
+        function copyFunction() {
+            var copyText = document.getElementById("btcAddress");
+
+            copyText.select();
+            copyText.setSelectionRange(0, 9999999999999);
+
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+    <script src="/js/payment.js"></script>
+</body>
+
+</html>
